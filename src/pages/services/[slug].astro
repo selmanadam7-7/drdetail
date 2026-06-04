@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SERVICES, BIZ } from '../../data/site.mjs';
+
+export function getStaticPaths() {
+  return SERVICES.map(s => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+const { service: s } = Astro.props;
+const i = SERVICES.findIndex(x => x.slug === s.slug);
+const related = SERVICES.filter(x => x.slug !== s.slug).slice(0, 4);
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+---
+<Layout title={`${s.title} in Fargo, ND | Dr. Detail`} description={s.lead} section="services">
+  <div class="detail-hero"><div class="dh-img"><img src={s.img} alt={`${s.title} in Fargo, ND`} /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/services/">Services</a><span class="sep">/</span><span>{s.title}</span></div>
+    <span class="label">Service · {'0'+(i+1)}</span>
+    <h1>{s.title}<br><span class="am">in Fargo, ND</span></h1>
+    <p class="lead">{s.lead}</p>
+  </div></div>
+  <div class="detail-body"><div class="container detail-layout">
+    <div class="detail-content">
+      <div class="dimg"><img src={s.img} alt={s.title} /></div>
+      <h2>Overview</h2><p>{s.intro}</p>
+      <h2>What's Included</h2><ul class="check-list">{s.includes.map(x => <li>{x}</li>)}</ul>
+      <p>{s.closing}</p>
+      <a class="btn btn-primary btn-lg" href="/contact/" style="margin-top:12px" set:html={`Book ${s.title} ${arrow}`}></a>
+    </div>
+    <aside class="sidebar-card">
+      <div class="sb-tag">Starting at {s.price}</div><h3>Ready to book?</h3>
+      <p>Book {s.title.toLowerCase()} for your vehicle — final price depends on size &amp; condition. Same-day response.</p>
+      <a class="btn btn-primary" href="/contact/">Book Today</a>
+      <a class="btn btn-outline" href={BIZ.phoneHref}>Call {BIZ.phone}</a>
+      <hr /><div class="sb-h">Other services</div><div class="related-chips">{related.map(x => <a href={`/services/${x.slug}/`}>{x.title}</a>)}</div>
+    </aside>
+  </div></div>
+</Layout>

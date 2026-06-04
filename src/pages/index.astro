@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BIZ, SERVICES, GALLERY } from '../data/site.mjs';
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const homeGallery = GALLERY.slice(0, 6).map(g => ({ ...g, size: g.size === 'tall' ? '' : g.size }));
+const faqs = [
+  { q: 'Where are you located?', a: 'Our detailing studio is at 4402 27th St N, Fargo, ND 58102. Just drop your vehicle off and we will take care of the rest — most details are same-day. We are a short, easy drive for the whole Fargo-Moorhead metro.' },
+  { q: 'How much does it cost?', a: 'Most details run between $89 and $699 — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $699. Exact pricing depends on your vehicle size and condition.' },
+  { q: 'How long does a detail take?', a: 'An express detail takes about an hour; a full interior-and-exterior detail usually runs 3 to 5 hours. Paint correction and ceramic coatings can take a day or more.' },
+  { q: 'Do I need to leave my vehicle overnight?', a: 'Usually not — most details are same-day. The exception is ceramic coatings and multi-stage paint correction, which sometimes need overnight cure time.' },
+  { q: 'Is it safe for my paint?', a: 'Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks. We are fully licensed and insured.' },
+  { q: 'What payment do you accept?', a: 'Cash, all major credit and debit cards, and digital payments. Payment is due when the work is complete.' },
+];
+const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) };
+---
+<Layout title="Dr. Detail | Premium Auto Detailing Studio in Fargo, ND" description="Fargo's premium detailing studio. Interior & exterior detailing, ceramic coating, paint correction. Book your detail today." section="home">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="hero">
+    <div class="hero-img"><img src="/hero.jpg" alt="Premium car detailed at Dr. Detail Fargo" fetchpriority="high" /></div>
+    <div class="bubbles" aria-hidden="true">
+      <span class="bubble" style="width:84px;height:84px;right:8%;top:15%;opacity:.3;animation:bubB 18s ease-in-out infinite"></span>
+      <span class="bubble" style="width:44px;height:44px;left:6%;top:30%;opacity:.42;animation:bubA 14s ease-in-out infinite 1.5s backwards"></span>
+      <span class="bubble" style="width:24px;height:24px;right:26%;bottom:22%;opacity:.5;animation:bubC 12s ease-in-out infinite .8s backwards"></span>
+    </div>
+    <div class="container hero-inner">
+      <span class="label">Premium Auto Detailing · Fargo, ND</span>
+      <h1>Obsessed With<br><span class="am">The Details.</span></h1>
+      <p class="sub">Fargo's premium detailing studio — interior deep cleans, ceramic coatings, and paint correction that bring back true showroom shine.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-primary btn-lg" set:html={'Book Today <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>'}></a>
+        <a href={BIZ.phoneHref} class="btn btn-outline btn-lg">Call {BIZ.phone}</a>
+      </div>
+      <div class="hero-rate">Licensed &amp; Insured · By-Hand Detailing · 100% Satisfaction Guarantee</div>
+    </div>
+  </div>
+
+  <div class="trust"><div class="container">
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><b>Locally Owned</b>&nbsp;· Fargo, ND</div>
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.5 5 5.5.8-4 3.9.9 5.5L12 16.5 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg>By Hand, Never Automated</div>
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% Satisfaction Guarantee</div>
+  </div></div>
+
+  <section class="section"><div class="container intro-grid">
+    <div class="intro-copy reveal">
+      <span class="label">Who We Are</span>
+      <h2>The Fargo Standard In Car Care</h2>
+      <p>Automatic washes swirl your paint and miss the details. We don't. Every vehicle is treated by hand, by trained detailers, using professional-grade products built to protect — not just shine for a day.</p>
+      <p>From salt-soaked winter interiors to faded paint and bare clear coat, we diagnose what your car actually needs and bring it back to its best.</p>
+      <div class="stats">
+        <div><div class="n">Free</div><div class="l">No-Obligation Quotes</div></div>
+        <div><div class="n">Same Day</div><div class="l">On Most Details</div></div>
+        <div><div class="n">100%</div><div class="l">Satisfaction Guarantee</div></div>
+      </div>
+    </div>
+    <div class="intro-media reveal">
+      <img src="/owner.jpg" alt="The owner of Dr. Detail in Fargo, ND" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="owner-ph">
+        <span class="ph-tag">Owner Photo</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        <span class="ph-label">Add a photo of the owner</span>
+      </div>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div class="tx"><b>By Hand. By Pros.</b>Every detail, done right in Fargo, ND</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="sec-head reveal"><span class="label">01 — Our Services</span><h2>Detailing, Done Properly</h2><p>From a quick refresh to a full paint restoration — every service is hands-on and built around your vehicle.</p></div>
+      <div class="svc-grid">
+        {SERVICES.slice(0,6).map((s,i) => (
+          <a class="svc-card reveal" href={`/services/${s.slug}/`}>
+            <img src={s.img} alt={s.title} loading="lazy" />
+            <div class="ov"><span class="num">{'0'+(i+1)}</span><h3>{s.title}</h3><div class="svc-price">From {s.price}</div><p>{s.short}</p><span class="go" set:html={'View service '+arrow}></span></div>
+          </a>
+        ))}
+      </div>
+      <p class="reveal" style="text-align:center;margin-top:38px;color:var(--text-2);font-size:1.02rem">Transparent pricing — most details run <b style="color:#fff">$89–$699</b> depending on size &amp; condition. <a href="/pricing/" style="color:var(--accent);font-weight:600">See full pricing →</a></p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="sec-head center reveal"><span class="label center">02 — The Proof</span><h2>See The Difference</h2><p>Drag the slider to compare. Demo images for now — your real before &amp; after shots drop straight in.</p></div>
+      <div class="ba-wrap reveal">
+        <div class="ba" id="ba">
+          <img class="ba-after" src="/svc-ceramic.jpg" alt="After detailing — glossy paint" loading="lazy" decoding="async" />
+          <img class="ba-before" src="/ba-before.jpg" alt="Before detailing" loading="lazy" decoding="async" />
+          <div class="ba-line"><div class="ba-grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5"/></svg></div></div>
+          <span class="ba-tag ba-l">Before</span><span class="ba-tag ba-r">After</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="sec-head reveal"><span class="label">03 — How It Works</span><h2>Four Steps To Showroom</h2><p>No guesswork and no surprise charges — here's exactly what happens when your vehicle comes in.</p></div>
+    <div class="how">
+      <div class="how-media reveal">
+        <img src="/how.jpg" alt="Dr. Detail technician hand-detailing a vehicle" loading="lazy" decoding="async" />
+        <div class="ovl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b>Backed by our guarantee</b><span>Licensed, insured &amp; locally owned in Fargo</span></div>
+        </div>
+      </div>
+      <div class="how-steps reveal">
+        <div class="hstep"><div class="hn">01<span>Inspect</span></div><div><h3>Inspect &amp; Quote</h3><p>We look over your paint and interior, talk through what you want, and give you a clear price up front — free, no pressure.</p></div></div>
+        <div class="hstep"><div class="hn">02<span>Prep</span></div><div><h3>Prep &amp; Decontaminate</h3><p>Safe pre-wash, gentle hand wash, and clay-bar decon so every treatment lands on a genuinely clean surface.</p></div></div>
+        <div class="hstep"><div class="hn">03<span>Detail</span></div><div><h3>The Detail</h3><p>Interior, exterior, paint correction, or ceramic — done by hand with pro-grade products matched to your vehicle.</p></div></div>
+        <div class="hstep"><div class="hn">04<span>Protect</span></div><div><h3>Protect &amp; Deliver</h3><p>We seal and protect, run a final white-glove inspection, then hand back a vehicle that looks factory-fresh.</p></div></div>
+        <div class="how-cta">
+          <div class="ct"><b>Most details are same-day</b><span>Takes about 60 seconds — no obligation.</span></div>
+          <a href="/contact/" class="btn btn-primary" set:html={'Book Today <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>'}></a>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="sec-head reveal"><span class="label">04 — Our Work</span><h2>Recent Details</h2><p>A look at the work — real vehicles detailed right here in Fargo.</p></div>
+      <div class="gallery-grid">
+        {homeGallery.map(g => (
+          <div class={`gal-item ${g.size}`} data-img={g.id} tabindex="0" role="button" aria-label={`View ${g.tag} photo`}><span class="tag">{g.tag}</span><img src={g.id} alt={`${g.tag} detailing in Fargo`} loading="lazy" /></div>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:42px" class="reveal"><a href="/gallery/" class="btn btn-outline">View Full Gallery</a></div>
+    </div>
+  </section>
+
+  <section class="section"><div class="container">
+    <div class="sec-head reveal"><span class="label">05 — Our Promise</span><h2>Why Fargo Trusts Us</h2><p>We earn every customer the hard way — careful work, honest pricing, and a guarantee behind it.</p></div>
+    <div class="testi-grid">
+      <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">By Hand, Never Automated</h3><p>No drive-through brushes or shortcuts. pH-balanced products and microfiber-only contact that protect your paint instead of swirling it.</p></div>
+      <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">Licensed &amp; Insured</h3><p>Your vehicle is fully covered from the moment we start until the second you drive away. Total peace of mind.</p></div>
+      <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">Guaranteed Right</h3><p>If it's not perfect at pickup, we make it right — no questions, no hassle. That's our 100% satisfaction guarantee.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:38px" class="reveal">
+      <p class="muted" style="margin-bottom:16px">Recently had us out? We'd love your feedback.</p>
+      <a href={BIZ.reviewUrl} target="_blank" rel="noopener" class="btn btn-outline">Leave Us a Google Review</a>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container contact-layout">
+    <div class="contact-info reveal">
+      <span class="label">Get In Touch</span>
+      <h2 style="margin:18px 0 16px">Book Your Detail</h2>
+      <p style="color:var(--text-2);margin-bottom:30px;max-width:420px">Drop your vehicle off at our Fargo studio — tell us what it needs and we'll get right back to you, usually the same day.</p>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div><div><h4>Call or Text</h4><a href={BIZ.phoneHref}>{BIZ.phone}</a></div></div>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Studio</h4><p>{BIZ.address}</p></div></div>
+      <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h4>Hours</h4><p>{BIZ.hours}</p></div></div>
+    </div>
+    <div class="quote-form reveal" style="padding:0;overflow:hidden;background:transparent;border:none">
+      <iframe src="https://api.cleanerclicks.com/widget/form/xAg7GX9e75KczDzdVB9h" style="width:100%;min-height:894px;border:none;border-radius:10px;background:transparent;display:block" id="inline-xAg7GX9e75KczDzdVB9h-2" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate" data-deactivation-value="" data-form-name="Website Form" data-height="894" data-layout-iframe-id="inline-xAg7GX9e75KczDzdVB9h-2" data-form-id="xAg7GX9e75KczDzdVB9h" title="Website Form"></iframe>
+    </div>
+  </div></section>
+
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="container">
+    <div class="sec-head center reveal"><span class="label center">FAQ</span><h2>Good To Know</h2></div>
+    <div class="faq reveal" id="faq">
+      <div class="faq-item"><button class="faq-q">Where are you located?<span class="ic">+</span></button><div class="faq-a"><p>Our detailing studio is at <strong style="color:#fff">4402 27th St N, Fargo, ND 58102</strong>. Just drop your vehicle off and we'll take care of the rest — most details are same-day. We're a short, easy drive for the whole Fargo-Moorhead metro. <a href="/areas/">See the areas we serve →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$89 and $699</strong> — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $699. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How long does a detail take?<span class="ic">+</span></button><div class="faq-a"><p>An express detail takes about an hour; a full interior-and-exterior detail usually runs 3–5 hours. Paint correction and ceramic coatings can take a day or more. We'll give you a clear time estimate up front.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to leave my vehicle overnight?<span class="ic">+</span></button><div class="faq-a"><p>Usually not — most details are same-day. The exception is ceramic coatings and multi-stage paint correction, which sometimes need overnight cure time. We'll always tell you before you book.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What about winter or bad weather?<span class="ic">+</span></button><div class="faq-a"><p>We detail year-round. Our studio is fully enclosed and climate-controlled, so Fargo winters, salt, and slush are no problem.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Are pet hair, mud, or heavy stains extra?<span class="ic">+</span></button><div class="faq-a"><p>Heavily soiled vehicles, pet hair, and deep stains take extra time and can add to the price — but we'll always price it up front before we start. <strong style="color:#fff">No surprise charges, ever.</strong></p></div></div>
+      <div class="faq-item"><button class="faq-q">Is it safe for my paint?<span class="ic">+</span></button><div class="faq-a"><p>Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash. We're fully licensed and insured.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How does the $25-off offer work?<span class="ic">+</span></button><div class="faq-a"><p>It's for new customers — just mention it when you book and we'll take $25 off your first detail. No code needed.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What payment do you accept?<span class="ic">+</span></button><div class="faq-a"><p>Cash, all major credit/debit cards, and digital payments. Payment is due when the work is complete.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What if I'm not happy?<span class="ic">+</span></button><div class="faq-a"><p>We make it right — no questions, no hassle. Every detail is backed by our 100% satisfaction guarantee. If something isn't perfect at pickup, we fix it.</p></div></div>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container"><div class="cta-band reveal">
+    <div class="cb-img"><img src="/svc-headlight.jpg" alt="Detailed Mustang at Dr. Detail in Fargo, ND" /></div>
+    <div class="bubbles" aria-hidden="true">
+      <span class="bubble" style="width:62px;height:62px;right:7%;top:18%;opacity:.3;animation:bubB 16s ease-in-out infinite"></span>
+      <span class="bubble" style="width:30px;height:30px;left:9%;bottom:20%;opacity:.46;animation:bubC 13s ease-in-out infinite 1.2s backwards"></span>
+    </div>
+    <span class="label center">Ready When You Are</span>
+    <h2 style="margin-top:18px">Bring Back The Shine</h2>
+    <p>Book your detail in under a minute — no obligation. Tell us about your vehicle and we'll handle the rest.</p>
+    <a href="/contact/" class="btn btn-primary btn-lg">Book Today</a>
+  </div></div></section>
+</Layout>

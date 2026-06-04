@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SERVICES } from '../../data/site.mjs';
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+---
+<Layout title="Services | Dr. Detail Fargo, ND" description="Interior detailing, exterior wash & wax, full details, ceramic coating, paint correction, and headlight restoration in Fargo, ND." section="services">
+  <div class="detail-hero"><div class="dh-img"><img src="/svc-headlight.jpg" alt="Car being detailed at Dr. Detail in Fargo, ND" /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>Services</span></div>
+    <span class="label">What We Do</span>
+    <h1>Our <span class="am">Services</span></h1>
+    <p class="lead">From a quick refresh to a full paint restoration — there's a service for whatever your vehicle needs.</p>
+  </div></div>
+  <section class="section"><div class="container">
+    <div class="svc-grid">
+      {SERVICES.map((s,i) => (
+        <a class="svc-card reveal" href={`/services/${s.slug}/`}>
+          <img src={s.img} alt={s.title} loading="lazy" />
+          <div class="ov"><span class="num">{'0'+(i+1)}</span><h3>{s.title}</h3><div class="svc-price">From {s.price}</div><p>{s.short}</p><span class="go" set:html={'View service '+arrow}></span></div>
+        </a>
+      ))}
+    </div>
+  </div></section>
+  <section class="section" style="padding-top:0"><div class="container"><div class="cta-band reveal"><div class="cb-img"><img src="/svc-full.jpg" alt="Vehicle getting a full detail in Fargo, ND" /></div><h2>Not Sure What You Need?</h2><p>Tell us about your vehicle and we'll recommend the right service — free of charge.</p><a href="/contact/" class="btn btn-primary btn-lg">Ask An Expert</a></div></div></section>
+</Layout>

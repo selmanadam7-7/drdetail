@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AREAS, SERVICES, BIZ } from '../../data/site.mjs';
+
+export function getStaticPaths() {
+  return AREAS.map(a => ({ params: { slug: a.slug }, props: { area: a } }));
+}
+const { area: a } = Astro.props;
+const city = a.name.split(',')[0];
+const related = AREAS.filter(x => x.slug !== a.slug);
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+---
+<Layout title={`Auto Detailing in ${a.name} | Dr. Detail`} description={`Auto detailing in ${a.name}. ${a.blurb}`} section="areas">
+  <div class="detail-hero"><div class="dh-img"><img src={a.img} alt={`Auto detailing in ${city}`} /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/areas/">Service Areas</a><span class="sep">/</span><span>{city}</span></div>
+    <span class="label">{a.st} · Service Area</span>
+    <h1>Detailing<br><span class="am">in {city}</span></h1>
+    <p class="lead">{a.blurb}</p>
+  </div></div>
+  <div class="detail-body"><div class="container detail-layout">
+    <div class="detail-content">
+      <div class="dimg"><img src={a.img} alt={`Detailing in ${city}`} /></div>
+      <p>{a.body}</p>
+      <h2>Services Available in {city}</h2><ul class="check-list">{SERVICES.map(s => <li>{s.title}</li>)}</ul>
+      <p>{city} drivers are an easy drive from our Fargo studio. Drop off your vehicle and booking takes less than a minute.</p>
+      <a class="btn btn-primary btn-lg" href="/contact/" style="margin-top:12px" set:html={`Book Today in ${city} ${arrow}`}></a>
+    </div>
+    <aside class="sidebar-card">
+      <div class="sb-tag">Now Serving {a.st}</div><h3>Detailing in {city}</h3>
+      <p>Premium auto detailing for {a.name} drivers, at our Fargo studio. Book today.</p>
+      <a class="btn btn-primary" href="/contact/">Book Today</a>
+      <a class="btn btn-outline" href={BIZ.phoneHref}>Call {BIZ.phone}</a>
+      <hr /><div class="sb-h">Other areas</div><div class="related-chips">{related.map(x => <a href={`/areas/${x.slug}/`}>{x.name.split(',')[0]}</a>)}</div>
+    </aside>
+  </div></div>
+</Layout>

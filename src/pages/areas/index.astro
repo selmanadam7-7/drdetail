@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AREAS } from '../../data/site.mjs';
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+---
+<Layout title="Service Areas | Dr. Detail Fargo-Moorhead" description="Dr. Detail's Fargo studio serves drivers from Fargo, West Fargo, Moorhead, Dilworth, and Horace with premium auto detailing." section="areas">
+  <div class="detail-hero"><div class="dh-img"><img src="/ext-audi.jpg" alt="Audi detailed at Dr. Detail in Fargo, ND" /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>Service Areas</span></div>
+    <span class="label">Where We Work</span>
+    <h1>Service <span class="am">Areas</span></h1>
+    <p class="lead">Drivers from across the Fargo-Moorhead metro choose Dr. Detail. Find your city below.</p>
+  </div></div>
+  <section class="section"><div class="container">
+    <div class="area-grid">
+      {AREAS.map(a => (
+        <a class="area-card reveal" href={`/areas/${a.slug}/`}>
+          <img src={a.img} alt={a.name} loading="lazy" />
+          <div class="ov"><span class="st">{a.st}</span><h3>{a.name.split(',')[0]}</h3><p>{a.blurb}</p><span class="go" set:html={`Detailing in ${a.name.split(',')[0]} ${arrow}`}></span></div>
+        </a>
+      ))}
+    </div>
+  </div></section>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { GALLERY } from '../data/site.mjs';
+---
+<Layout title="Gallery | Dr. Detail Fargo, ND" description="See before-and-after photos of vehicles detailed by Dr. Detail in Fargo, ND." section="gallery">
+  <div class="detail-hero"><div class="dh-img"><img src="/svc-ceramic.jpg" alt="Glossy detailed vehicle in Fargo, ND" /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>Gallery</span></div>
+    <span class="label">Our Work</span>
+    <h1>The <span class="am">Gallery</span></h1>
+    <p class="lead">Real results from real Fargo vehicles. Browse the work — your car could be next.</p>
+  </div></div>
+  <section class="section"><div class="container">
+    <div class="gallery-grid">
+      {GALLERY.map(g => (
+        <div class={`gal-item ${g.size}`} data-img={g.id} tabindex="0" role="button" aria-label={`View ${g.tag} photo`}><span class="tag">{g.tag}</span><img src={g.id} alt={`${g.tag} detailing in Fargo`} loading="lazy" /></div>
+      ))}
+    </div>
+    <div style="text-align:center;margin-top:46px" class="reveal"><a href="/contact/" class="btn btn-primary btn-lg">Get The Same Results — Book Today</a></div>
+  </div></section>
+</Layout>
