@@ -16,7 +16,11 @@
 - [Ceramic Coating](https://drdetail.vercel.app/services/ceramic-coating/) (from $350)
 - [Headlight Restoration](https://drdetail.vercel.app/services/headlight-restoration/) (from $79)
 
-A Full Detail membership is also available at $180 per detail (standing member discount).
+## Memberships (Detail Club)
+Monthly maintenance memberships, month-to-month with no contract. New members start with a one-time Full Detail to bring the vehicle to baseline.
+- Maintenance ($89/month): one maintenance detail per month, exterior hand wash + spray-wax sealant, wheels/tires, interior vacuum + wipe-down, priority booking, 10% off add-ons.
+- Signature ($149/month): one full maintenance detail per month (adds interior steam, leather conditioning, clay bar + wax, free interior add-ons), 15% off full details/ceramic/headlights.
+- Showroom ($249/month): two maintenance details per month (bi-weekly), 20% off all services, quarterly headlight restoration & odor treatment, top-priority scheduling.
 
 ## Links
 - [Home](https://drdetail.vercel.app/)
