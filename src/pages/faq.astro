@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqs = [
+  { q: 'Where are you located?', a: 'Our detailing studio is at 4402 27th St N, Fargo, ND 58102. Just drop your vehicle off and we will take care of the rest — most details are same-day. We are a short, easy drive for the whole Fargo-Moorhead metro.' },
+  { q: 'How much does it cost?', a: 'Most details run between $89 and $350 — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle size and condition.' },
+  { q: 'How long does a detail take?', a: 'An express detail takes about an hour; a full interior-and-exterior detail usually runs 3 to 5 hours. Ceramic coatings can take a day or more.' },
+  { q: 'Do I need to leave my vehicle overnight?', a: 'Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time.' },
+  { q: 'What about winter or bad weather?', a: 'We detail year-round. Our studio is fully enclosed and climate-controlled, so Fargo winters, salt, and slush are no problem.' },
+  { q: 'Are pet hair, mud, or heavy stains extra?', a: 'Heavily soiled vehicles, pet hair, and deep stains take extra time and can add to the price — but we will always price it up front before we start. No surprise charges, ever.' },
+  { q: 'Is it safe for my paint?', a: 'Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash.' },
+  { q: 'How does the $25-off offer work?', a: 'It is for new customers — just mention it when you book and we will take $25 off your first detail. No code needed.' },
+  { q: 'What payment do you accept?', a: 'Cash, all major credit and debit cards, and digital payments. Payment is due when the work is complete.' },
+  { q: "What if I'm not happy?", a: 'We make it right — no questions, no hassle. Every detail is backed by our 100% satisfaction guarantee. If something is not perfect at pickup, we fix it.' },
+];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Layout title="FAQ | Dr. Detail Fargo, ND" description="Answers to common questions about Dr. Detail's auto detailing in Fargo, ND — pricing, timing, drop-off, payment, and our satisfaction guarantee." section="faq">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} is:inline></script>
+
+  <div class="detail-hero"><div class="dh-img"><img src="/svc-interior.jpg" alt="Dr. Detail interior detailing in Fargo, ND" /></div><div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>FAQ</span></div>
+    <span class="label">Good To Know</span>
+    <h1>Frequently Asked <span class="am">Questions</span></h1>
+    <p class="lead">Everything you need to know before you book — pricing, timing, drop-off, and more.</p>
+  </div></div>
+
+  <section class="section"><div class="container">
+    <div class="faq" id="faq">
+      <div class="faq-item"><button class="faq-q">Where are you located?<span class="ic">+</span></button><div class="faq-a"><p>Our detailing studio is at <strong style="color:#fff">4402 27th St N, Fargo, ND 58102</strong>. Just drop your vehicle off and we'll take care of the rest — most details are same-day. We're a short, easy drive for the whole Fargo-Moorhead metro. <a href="/areas/">See the areas we serve →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$89 and $350</strong> — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How long does a detail take?<span class="ic">+</span></button><div class="faq-a"><p>An express detail takes about an hour; a full interior-and-exterior detail usually runs 3–5 hours. Ceramic coatings can take a day or more. We'll give you a clear time estimate up front.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to leave my vehicle overnight?<span class="ic">+</span></button><div class="faq-a"><p>Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time. We'll always tell you before you book.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What about winter or bad weather?<span class="ic">+</span></button><div class="faq-a"><p>We detail year-round. Our studio is fully enclosed and climate-controlled, so Fargo winters, salt, and slush are no problem.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Are pet hair, mud, or heavy stains extra?<span class="ic">+</span></button><div class="faq-a"><p>Heavily soiled vehicles, pet hair, and deep stains take extra time and can add to the price — but we'll always price it up front before we start. <strong style="color:#fff">No surprise charges, ever.</strong></p></div></div>
+      <div class="faq-item"><button class="faq-q">Is it safe for my paint?<span class="ic">+</span></button><div class="faq-a"><p>Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How does the $25-off offer work?<span class="ic">+</span></button><div class="faq-a"><p>It's for new customers — just mention it when you book and we'll take $25 off your first detail. No code needed.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What payment do you accept?<span class="ic">+</span></button><div class="faq-a"><p>Cash, all major credit/debit cards, and digital payments. Payment is due when the work is complete.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What if I'm not happy?<span class="ic">+</span></button><div class="faq-a"><p>We make it right — no questions, no hassle. Every detail is backed by our 100% satisfaction guarantee. If something isn't perfect at pickup, we fix it.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:46px" class="reveal"><a href="/contact/" class="btn btn-primary btn-lg">Book Today</a></div>
+  </div></section>
+</Layout>

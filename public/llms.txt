@@ -1,6 +1,6 @@
 ﻿# Dr. Detail
 
-> Premium auto detailing studio in Fargo, North Dakota. Shop-only (drop-off): interior detailing, exterior wash & wax, full details, ceramic coating, paint correction, headlight restoration.
+> Premium auto detailing studio in Fargo, North Dakota. Shop-only (drop-off): interior detailing, exterior wash & wax, full details, ceramic coating, headlight restoration.
 
 ## Business
 - Name: Dr. Detail
@@ -13,11 +13,14 @@
 - [Interior Detailing](https://drdetail.vercel.app/services/interior-detailing/) (from $129)
 - [Exterior Wash & Wax](https://drdetail.vercel.app/services/exterior-detailing/) (from $89)
 - [Full Detail](https://drdetail.vercel.app/services/full-detail/) (from $229)
-- [Ceramic Coating](https://drdetail.vercel.app/services/ceramic-coating/) (from $699)
-- [Paint Correction](https://drdetail.vercel.app/services/paint-correction/) (from $349)
+- [Ceramic Coating](https://drdetail.vercel.app/services/ceramic-coating/) (from $350)
 - [Headlight Restoration](https://drdetail.vercel.app/services/headlight-restoration/) (from $79)
+
+A Full Detail membership is also available at $180 per detail (standing member discount).
 
 ## Links
 - [Home](https://drdetail.vercel.app/)
+- [About](https://drdetail.vercel.app/about/)
 - [Pricing](https://drdetail.vercel.app/pricing/)
+- [FAQ](https://drdetail.vercel.app/faq/)
 - [Book / Contact](https://drdetail.vercel.app/contact/)

@@ -5,15 +5,15 @@ const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const homeGallery = GALLERY.slice(0, 6).map(g => ({ ...g, size: g.size === 'tall' ? '' : g.size }));
 const faqs = [
   { q: 'Where are you located?', a: 'Our detailing studio is at 4402 27th St N, Fargo, ND 58102. Just drop your vehicle off and we will take care of the rest — most details are same-day. We are a short, easy drive for the whole Fargo-Moorhead metro.' },
-  { q: 'How much does it cost?', a: 'Most details run between $89 and $699 — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $699. Exact pricing depends on your vehicle size and condition.' },
-  { q: 'How long does a detail take?', a: 'An express detail takes about an hour; a full interior-and-exterior detail usually runs 3 to 5 hours. Paint correction and ceramic coatings can take a day or more.' },
-  { q: 'Do I need to leave my vehicle overnight?', a: 'Usually not — most details are same-day. The exception is ceramic coatings and multi-stage paint correction, which sometimes need overnight cure time.' },
-  { q: 'Is it safe for my paint?', a: 'Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks. We are fully licensed and insured.' },
+  { q: 'How much does it cost?', a: 'Most details run between $89 and $350 — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle size and condition.' },
+  { q: 'How long does a detail take?', a: 'An express detail takes about an hour; a full interior-and-exterior detail usually runs 3 to 5 hours. Ceramic coatings can take a day or more.' },
+  { q: 'Do I need to leave my vehicle overnight?', a: 'Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time.' },
+  { q: 'Is it safe for my paint?', a: 'Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash.' },
   { q: 'What payment do you accept?', a: 'Cash, all major credit and debit cards, and digital payments. Payment is due when the work is complete.' },
 ];
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) };
 ---
-<Layout title="Dr. Detail | Premium Auto Detailing Studio in Fargo, ND" description="Fargo's premium detailing studio. Interior & exterior detailing, ceramic coating, paint correction. Book your detail today." section="home">
+<Layout title="Dr. Detail | Premium Auto Detailing Studio in Fargo, ND" description="Fargo's premium detailing studio. Interior & exterior detailing, full details, and ceramic coating. Book your detail today." section="home">
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(faqSchema)} />
 
   <div class="hero">
@@ -26,12 +26,12 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
     <div class="container hero-inner">
       <span class="label">Premium Auto Detailing · Fargo, ND</span>
       <h1>Obsessed With<br><span class="am">The Details.</span></h1>
-      <p class="sub">Fargo's premium detailing studio — interior deep cleans, ceramic coatings, and paint correction that bring back true showroom shine.</p>
+      <p class="sub">Fargo's premium detailing studio — interior deep cleans, exterior care, and ceramic coatings that bring back true showroom shine.</p>
       <div class="hero-actions">
         <a href="/contact/" class="btn btn-primary btn-lg" set:html={'Book Today <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg>'}></a>
         <a href={BIZ.phoneHref} class="btn btn-outline btn-lg">Call {BIZ.phone}</a>
       </div>
-      <div class="hero-rate">Licensed &amp; Insured · By-Hand Detailing · 100% Satisfaction Guarantee</div>
+      <div class="hero-rate">By-Hand Detailing · Same-Day Service · 100% Satisfaction Guarantee</div>
     </div>
   </div>
 
@@ -78,7 +78,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
           </a>
         ))}
       </div>
-      <p class="reveal" style="text-align:center;margin-top:38px;color:var(--text-2);font-size:1.02rem">Transparent pricing — most details run <b style="color:#fff">$89–$699</b> depending on size &amp; condition. <a href="/pricing/" style="color:var(--accent);font-weight:600">See full pricing →</a></p>
+      <p class="reveal" style="text-align:center;margin-top:38px;color:var(--text-2);font-size:1.02rem">Transparent pricing — most details run <b style="color:#fff">$89–$350</b> depending on size &amp; condition. <a href="/pricing/" style="color:var(--accent);font-weight:600">See full pricing →</a></p>
     </div>
   </section>
 
@@ -103,13 +103,13 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
         <img src="/how.jpg" alt="Dr. Detail technician hand-detailing a vehicle" loading="lazy" decoding="async" />
         <div class="ovl">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div><b>Backed by our guarantee</b><span>Licensed, insured &amp; locally owned in Fargo</span></div>
+          <div><b>Backed by our guarantee</b><span>Locally owned &amp; operated in Fargo</span></div>
         </div>
       </div>
       <div class="how-steps reveal">
         <div class="hstep"><div class="hn">01<span>Inspect</span></div><div><h3>Inspect &amp; Quote</h3><p>We look over your paint and interior, talk through what you want, and give you a clear price up front — free, no pressure.</p></div></div>
         <div class="hstep"><div class="hn">02<span>Prep</span></div><div><h3>Prep &amp; Decontaminate</h3><p>Safe pre-wash, gentle hand wash, and clay-bar decon so every treatment lands on a genuinely clean surface.</p></div></div>
-        <div class="hstep"><div class="hn">03<span>Detail</span></div><div><h3>The Detail</h3><p>Interior, exterior, paint correction, or ceramic — done by hand with pro-grade products matched to your vehicle.</p></div></div>
+        <div class="hstep"><div class="hn">03<span>Detail</span></div><div><h3>The Detail</h3><p>Interior, exterior, or ceramic — done by hand with pro-grade products matched to your vehicle.</p></div></div>
         <div class="hstep"><div class="hn">04<span>Protect</span></div><div><h3>Protect &amp; Deliver</h3><p>We seal and protect, run a final white-glove inspection, then hand back a vehicle that looks factory-fresh.</p></div></div>
         <div class="how-cta">
           <div class="ct"><b>Most details are same-day</b><span>Takes about 60 seconds — no obligation.</span></div>
@@ -135,7 +135,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
     <div class="sec-head reveal"><span class="label">05 — Our Promise</span><h2>Why Fargo Trusts Us</h2><p>We earn every customer the hard way — careful work, honest pricing, and a guarantee behind it.</p></div>
     <div class="testi-grid">
       <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">By Hand, Never Automated</h3><p>No drive-through brushes or shortcuts. pH-balanced products and microfiber-only contact that protect your paint instead of swirling it.</p></div>
-      <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">Licensed &amp; Insured</h3><p>Your vehicle is fully covered from the moment we start until the second you drive away. Total peace of mind.</p></div>
+      <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">Honest, Up-Front Pricing</h3><p>You get a clear price before we start — no surprise charges, ever. What we quote is what you pay.</p></div>
       <div class="testi-card reveal"><h3 style="color:#fff;margin-bottom:12px">Guaranteed Right</h3><p>If it's not perfect at pickup, we make it right — no questions, no hassle. That's our 100% satisfaction guarantee.</p></div>
     </div>
     <div style="text-align:center;margin-top:38px" class="reveal">
@@ -162,12 +162,12 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
     <div class="sec-head center reveal"><span class="label center">FAQ</span><h2>Good To Know</h2></div>
     <div class="faq reveal" id="faq">
       <div class="faq-item"><button class="faq-q">Where are you located?<span class="ic">+</span></button><div class="faq-a"><p>Our detailing studio is at <strong style="color:#fff">4402 27th St N, Fargo, ND 58102</strong>. Just drop your vehicle off and we'll take care of the rest — most details are same-day. We're a short, easy drive for the whole Fargo-Moorhead metro. <a href="/areas/">See the areas we serve →</a></p></div></div>
-      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$89 and $699</strong> — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $699. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
-      <div class="faq-item"><button class="faq-q">How long does a detail take?<span class="ic">+</span></button><div class="faq-a"><p>An express detail takes about an hour; a full interior-and-exterior detail usually runs 3–5 hours. Paint correction and ceramic coatings can take a day or more. We'll give you a clear time estimate up front.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Do I need to leave my vehicle overnight?<span class="ic">+</span></button><div class="faq-a"><p>Usually not — most details are same-day. The exception is ceramic coatings and multi-stage paint correction, which sometimes need overnight cure time. We'll always tell you before you book.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$89 and $350</strong> — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How long does a detail take?<span class="ic">+</span></button><div class="faq-a"><p>An express detail takes about an hour; a full interior-and-exterior detail usually runs 3–5 hours. Ceramic coatings can take a day or more. We'll give you a clear time estimate up front.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to leave my vehicle overnight?<span class="ic">+</span></button><div class="faq-a"><p>Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time. We'll always tell you before you book.</p></div></div>
       <div class="faq-item"><button class="faq-q">What about winter or bad weather?<span class="ic">+</span></button><div class="faq-a"><p>We detail year-round. Our studio is fully enclosed and climate-controlled, so Fargo winters, salt, and slush are no problem.</p></div></div>
       <div class="faq-item"><button class="faq-q">Are pet hair, mud, or heavy stains extra?<span class="ic">+</span></button><div class="faq-a"><p>Heavily soiled vehicles, pet hair, and deep stains take extra time and can add to the price — but we'll always price it up front before we start. <strong style="color:#fff">No surprise charges, ever.</strong></p></div></div>
-      <div class="faq-item"><button class="faq-q">Is it safe for my paint?<span class="ic">+</span></button><div class="faq-a"><p>Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash. We're fully licensed and insured.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Is it safe for my paint?<span class="ic">+</span></button><div class="faq-a"><p>Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash.</p></div></div>
       <div class="faq-item"><button class="faq-q">How does the $25-off offer work?<span class="ic">+</span></button><div class="faq-a"><p>It's for new customers — just mention it when you book and we'll take $25 off your first detail. No code needed.</p></div></div>
       <div class="faq-item"><button class="faq-q">What payment do you accept?<span class="ic">+</span></button><div class="faq-a"><p>Cash, all major credit/debit cards, and digital payments. Payment is due when the work is complete.</p></div></div>
       <div class="faq-item"><button class="faq-q">What if I'm not happy?<span class="ic">+</span></button><div class="faq-a"><p>We make it right — no questions, no hassle. Every detail is backed by our 100% satisfaction guarantee. If something isn't perfect at pickup, we fix it.</p></div></div>

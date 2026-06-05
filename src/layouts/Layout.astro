@@ -12,7 +12,7 @@ const localBusiness = {
   "@type": ["AutoWash", "LocalBusiness"],
   "name": "Dr. Detail",
   "image": ogImage,
-  "description": "Fargo's premium auto detailing studio. Interior and exterior detailing, ceramic coating, and paint correction.",
+  "description": "Fargo's premium auto detailing studio. Interior and exterior detailing, full details, and ceramic coating.",
   "@id": "https://drdetail.vercel.app/",
   "url": "https://drdetail.vercel.app/",
   "telephone": BIZ.phone,
@@ -27,6 +27,7 @@ const localBusiness = {
 };
 const navItems = [
   { label: 'Home', href: '/', key: 'home' },
+  { label: 'About', href: '/about/', key: 'about' },
   { label: 'Services', href: '/services/', key: 'services' },
   { label: 'Gallery', href: '/gallery/', key: 'gallery' },
   { label: 'Areas', href: '/areas/', key: 'areas' },
@@ -42,7 +43,7 @@ const phoneSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="keywords" content="auto detailing Fargo, car detailing Fargo ND, ceramic coating Fargo, paint correction North Dakota, car detailing studio Fargo, interior detailing, Dr. Detail" />
+<meta name="keywords" content="auto detailing Fargo, car detailing Fargo ND, ceramic coating Fargo, car detailing studio Fargo, interior detailing, headlight restoration, Dr. Detail" />
 <meta name="author" content="Dr. Detail" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href={canonical} />
@@ -105,7 +106,7 @@ const phoneSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
     </div>
     <div class="footer-col"><h4>Services</h4>{SERVICES.map(s => <a href={`/services/${s.slug}/`}>{s.title}</a>)}</div>
     <div class="footer-col"><h4>Service Areas</h4>{AREAS.map(a => <a href={`/areas/${a.slug}/`}>{a.name.split(',')[0]}</a>)}</div>
-    <div class="footer-col"><h4>Company</h4><a href="/gallery/">Gallery</a><a href="/pricing/">Pricing</a><a href="/contact/">Contact</a><a href={BIZ.phoneHref}>{BIZ.phone}</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/about/">About</a><a href="/gallery/">Gallery</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a><a href={BIZ.phoneHref}>{BIZ.phone}</a></div>
   </div>
   <div class="footer-bottom"><div>© {year} Dr. Detail · Fargo, North Dakota</div><div>Website by <a href="https://cleanerclicks.com" target="_blank" rel="noopener">Cleaner Clicks</a></div></div>
 </div></footer>
