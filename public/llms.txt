@@ -10,11 +10,11 @@
 - Serving: Fargo, West Fargo, Moorhead, Dilworth, Horace
 
 ## Services
-- [Interior Detailing](https://drdetail.vercel.app/services/interior-detailing/) (from $129)
-- [Exterior Wash & Wax](https://drdetail.vercel.app/services/exterior-detailing/) (from $89)
-- [Full Detail](https://drdetail.vercel.app/services/full-detail/) (from $229)
-- [Ceramic Coating](https://drdetail.vercel.app/services/ceramic-coating/) (from $350)
-- [Headlight Restoration](https://drdetail.vercel.app/services/headlight-restoration/) (from $79)
+- [Interior Detailing](https://drdetailfargo.com/services/interior-detailing/) (from $129)
+- [Exterior Wash & Wax](https://drdetailfargo.com/services/exterior-detailing/) (from $89)
+- [Full Detail](https://drdetailfargo.com/services/full-detail/) (from $229)
+- [Ceramic Coating](https://drdetailfargo.com/services/ceramic-coating/) (from $350)
+- [Headlight Restoration](https://drdetailfargo.com/services/headlight-restoration/) (from $79)
 
 ## Memberships (Detail Club)
 Monthly maintenance memberships, month-to-month with no contract. New members start with a one-time Full Detail to bring the vehicle to baseline.
@@ -22,8 +22,8 @@ Monthly maintenance memberships, month-to-month with no contract. New members st
 - Signature ($149/month): one full maintenance detail per month (adds interior steam, leather conditioning, clay bar + wax, free interior add-ons), 15% off full details/ceramic/headlights.
 
 ## Links
-- [Home](https://drdetail.vercel.app/)
-- [About](https://drdetail.vercel.app/about/)
-- [Pricing](https://drdetail.vercel.app/pricing/)
-- [FAQ](https://drdetail.vercel.app/faq/)
-- [Book / Contact](https://drdetail.vercel.app/contact/)
+- [Home](https://drdetailfargo.com/)
+- [About](https://drdetailfargo.com/about/)
+- [Pricing](https://drdetailfargo.com/pricing/)
+- [FAQ](https://drdetailfargo.com/faq/)
+- [Book / Contact](https://drdetailfargo.com/contact/)
