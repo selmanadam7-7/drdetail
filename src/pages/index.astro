@@ -5,7 +5,7 @@ const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 const homeGallery = GALLERY.slice(0, 6).map(g => ({ ...g, size: g.size === 'tall' ? '' : g.size }));
 const faqs = [
   { q: 'Where are you located?', a: 'Our detailing studio is at 4402 27th St N, Fargo, ND 58102. Just drop your vehicle off and we will take care of the rest — most details are same-day. We are a short, easy drive for the whole Fargo-Moorhead metro.' },
-  { q: 'How much does it cost?', a: 'Most details run between $89 and $350 — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle size and condition.' },
+  { q: 'How much does it cost?', a: 'Most details run between $75 and $350 — an exterior wash & wax starts at $75, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle size and condition.' },
   { q: 'How long does a detail take?', a: 'An express detail takes about an hour; a full interior-and-exterior detail usually runs 3 to 5 hours. Ceramic coatings can take a day or more.' },
   { q: 'Do I need to leave my vehicle overnight?', a: 'Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time.' },
   { q: 'Is it safe for my paint?', a: 'Absolutely. We use pH-balanced soaps, the two-bucket method, and microfiber-only contact to avoid swirl marks — the opposite of an automatic car wash.' },
@@ -78,7 +78,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
           </a>
         ))}
       </div>
-      <p class="reveal" style="text-align:center;margin-top:38px;color:var(--text-2);font-size:1.02rem">Transparent pricing — most details run <b style="color:#fff">$89–$350</b> depending on size &amp; condition. <a href="/pricing/" style="color:var(--accent);font-weight:600">See full pricing →</a></p>
+      <p class="reveal" style="text-align:center;margin-top:38px;color:var(--text-2);font-size:1.02rem">Transparent pricing — most details run <b style="color:#fff">$75–$350</b> depending on size &amp; condition. <a href="/pricing/" style="color:var(--accent);font-weight:600">See full pricing →</a></p>
     </div>
   </section>
 
@@ -162,7 +162,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
     <div class="sec-head center reveal"><span class="label center">FAQ</span><h2>Good To Know</h2></div>
     <div class="faq reveal" id="faq">
       <div class="faq-item"><button class="faq-q">Where are you located?<span class="ic">+</span></button><div class="faq-a"><p>Our detailing studio is at <strong style="color:#fff">4402 27th St N, Fargo, ND 58102</strong>. Just drop your vehicle off and we'll take care of the rest — most details are same-day. We're a short, easy drive for the whole Fargo-Moorhead metro. <a href="/areas/">See the areas we serve →</a></p></div></div>
-      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$89 and $350</strong> — express details start at $89, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
+      <div class="faq-item"><button class="faq-q">How much does it cost?<span class="ic">+</span></button><div class="faq-a"><p>Most details run between <strong style="color:#fff">$75 and $350</strong> — an exterior wash & wax starts at $75, full interior-and-exterior details at $229, and ceramic packages at $350. Exact pricing depends on your vehicle's size and condition. The fastest way to lock in a price is to book today. <a href="/pricing/">View full pricing →</a></p></div></div>
       <div class="faq-item"><button class="faq-q">How long does a detail take?<span class="ic">+</span></button><div class="faq-a"><p>An express detail takes about an hour; a full interior-and-exterior detail usually runs 3–5 hours. Ceramic coatings can take a day or more. We'll give you a clear time estimate up front.</p></div></div>
       <div class="faq-item"><button class="faq-q">Do I need to leave my vehicle overnight?<span class="ic">+</span></button><div class="faq-a"><p>Usually not — most details are same-day. The exception is ceramic coatings, which sometimes need overnight cure time. We'll always tell you before you book.</p></div></div>
       <div class="faq-item"><button class="faq-q">What about winter or bad weather?<span class="ic">+</span></button><div class="faq-a"><p>We detail year-round. Our studio is fully enclosed and climate-controlled, so Fargo winters, salt, and slush are no problem.</p></div></div>
