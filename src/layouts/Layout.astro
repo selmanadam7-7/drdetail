@@ -23,7 +23,11 @@ const localBusiness = {
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "16:00" }
-  ]
+  ],
+  "email": BIZ.email,
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Digital Payments",
+  "sameAs": [BIZ.reviewUrl]
 };
 const navItems = [
   { label: 'Home', href: '/', key: 'home' },
@@ -99,8 +103,6 @@ const phoneSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
       <a class="logo" href="/" aria-label="Dr. Detail"><img src="/dr-detail-mascot.png" class="logo-img" alt="Dr. Detail" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" /><span class="mk" style="display:none">D</span>Dr.&nbsp;Detail</a>
       <p>Fargo's premium auto detailing studio. Showroom-quality results, careful hands, and products that protect your investment.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a href={BIZ.reviewUrl} target="_blank" rel="noopener" aria-label="Google"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 11v2.8h4a3.9 3.9 0 0 1-1.7 2.6l2.6 2A7.9 7.9 0 0 0 20 12c0-.6 0-1.1-.2-1.6z"/><path d="M12 20a8 8 0 0 0 5.5-2l-2.6-2a4.8 4.8 0 0 1-7.2-2.5l-2.7 2A8 8 0 0 0 12 20z" opacity=".7"/></svg></a>
       </div>
     </div>
