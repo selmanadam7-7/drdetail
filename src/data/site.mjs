@@ -10,6 +10,7 @@ export const BIZ = {
   zip: '58102',
   hours: 'Mon–Fri: 8am – 6pm · Sat: 9am – 4pm · Sun: Closed',
   reviewUrl: 'https://maps.app.goo.gl/P1ith9PBmhBVAs579',
+  instagram: 'https://www.instagram.com/drdetail.nd/',
   mapEmbed: 'https://maps.google.com/maps?q=4402%2027th%20St%20N%2C%20Fargo%2C%20ND%2058102&z=15&output=embed',
 };
 
